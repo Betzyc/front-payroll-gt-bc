@@ -21,6 +21,7 @@ import { apiService } from "./api-service";
 
 
 class CompanyService {
+    
     async createCompany(name, phone, description, address, picture, email, password) {
         const companyData = {
             name,

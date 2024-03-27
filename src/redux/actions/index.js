@@ -16,4 +16,6 @@ export const addCompany = (company) => ({
     //carga útil: id para encontrar company
     payload: companyId
   });
+
+
   

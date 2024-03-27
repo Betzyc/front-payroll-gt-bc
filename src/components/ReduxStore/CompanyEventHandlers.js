@@ -25,7 +25,7 @@ export const handleUpdateCompanyAction = (dispatch) => {
       picture: 'picture  Empresa 1 actualizada',
     };
     //Se llama al action: updateCompany y se envia el payload(objeto) updatedCompanyData
-  dispatch(updateCompany(updatedCompanyData));
+  dispatch(updateCompany(updatedCompanyData));s
 };
 
 //funcion para borrar company en lista de store redux

@@ -11,8 +11,15 @@ class EmployeeService {
         return get
     }
 
-    
-    async getEmployeeById(id) {
+    async createEmployee(data) {
+        const post = await this.apiService.post({
+            url: '/employees', 
+            data: {data}
+        });
+        return post;
+    }
+
+    /*async getEmployeeById(id) {
         const get = await this.apiService.get({
             url: '/employees/:employee_id',
             params: {
@@ -20,16 +27,9 @@ class EmployeeService {
             },
         })
         return get;
-    }
+    }*/
 
-    async createEmployee(data) {
-        const post = await this.apiService.post({
-            url: '/employees', 
-            data: data});
-        return post;
-    }
-
-    async updateEmployee(id, data) {
+   /* async updateEmployee(id, data) {
         const put = await this.apiService.put({
             url: '/employees/:employee_id',
             params: {
@@ -47,7 +47,7 @@ class EmployeeService {
             }
         });
         return del;
-    }
+    }*/
   
 }
 

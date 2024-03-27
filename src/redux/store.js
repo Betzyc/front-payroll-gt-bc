@@ -38,7 +38,8 @@ const initialState = {
   ]
 };
 
-//Creacion del store
+
 const store = createStore(reducer, initialState);
 
 export default store;
+
