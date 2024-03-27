@@ -9,7 +9,7 @@ const config = {
   },
   production: {
     // production environment
-    API_URL: '', 
+    API_URL: 'https://github.com/Betzyc/backend-payroll-gt.git', 
   },
 }
 
