@@ -19,7 +19,6 @@ import { apiService } from "./api-service";
 //         console.error('Error al ingresar compañía:', companyErr)
 //     })
 
-
 class CompanyService {
     
     async createCompany(name, phone, description, address, picture, email, password) {

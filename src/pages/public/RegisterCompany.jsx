@@ -1,6 +1,6 @@
-import ImgUploader from '@/components/uploadFiles/ImgUploader'
-import { companyService } from '@/services/company-service'
-import UploadFirebaseService from '@/services/firebase'
+import ImgUploader from '../../components/uploadFiles/ImgUploader'
+import { companyService } from '../../services/company-service'
+import UploadFirebaseService from '../../services/firebase'
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
 import {  useNavigate } from 'react-router-dom'
@@ -57,14 +57,14 @@ export const RegisterCompany = () => {
         formData.password,
       )
 
-      console.log('Respuesta al ingresar compañía:', response)
-      alert('¡La empresa se registró exitosamente!')
+      console.log('Ingresar compañía:', response)
+      alert('¡Registro exitoso!')
       //  al usuario a una página de éxito o mostrar un mensaje de éxito
       navigate('/')
 
     } catch (error) {
-        alert('Error al registrar la empresa: ' + error.message)
-        console.error('Error al registrar la empresa:', error)
+        alert('Error no se registro la empresa: ' + error.message)
+        console.error('Error no se registro la empresa:', error)
     }
   }
 
@@ -86,12 +86,16 @@ export const RegisterCompany = () => {
 
 
   return (
-    <div className='container mx-auto px-4'>
-      <h2 className='font-bold text-4xl text-center mb-6'>REGISTRO DE EMPRESA</h2>
+
+    
+    
+        
+    <div className='bg-gray-800 h-screen flex justify-center items-center'>
+      <h1 className='text-white font-bold text-4xl text-center mb-6'>REGISTRO DE EMPRESA</h1>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-        <div>
-          <label htmlFor='companyName'>
-            Nombre de la empresa o institución *
+        
+          <label className='text-white' htmlFor='companyName'>
+            Nombre de la empresa*
           </label>
           <input
             type='text'
@@ -101,12 +105,9 @@ export const RegisterCompany = () => {
             onChange={handleChange}
             required
             className='w-full border border-gray-300 rounded-md py-2 px-4'
-            placeholder='Ingrese el nombre de la empresa o institución'
           />
-        </div>
-
-        <div>
-          <label htmlFor='phoneNumber'>Teléfono *</label>
+        
+          <label className='text-white' htmlFor='phoneNumber'>Teléfono *</label>
           <input
             type='tel'
             id='phoneNumber'
@@ -116,12 +117,9 @@ export const RegisterCompany = () => {
             required
             maxLength={8}
             className='w-full border border-gray-300 rounded-md py-2 px-4'
-            placeholder='12345678'
           />
-        </div>
-
-        <div>
-          <label htmlFor='address'>Dirección *</label>
+        
+          <label className='text-white' htmlFor='address'>Dirección *</label>
           <input
             type='text'
             id='address'
@@ -130,11 +128,9 @@ export const RegisterCompany = () => {
             onChange={handleChange}
             required
             className='w-full border border-gray-300 rounded-md py-2 px-4'
-            placeholder='Dirección'
           />
-        </div>
-        <div>
-          <label htmlFor='email'>Correo electrónico (usuario) *</label>
+
+          <label className='text-white' htmlFor='email'>Correo electrónico (usuario) *</label>
           <input
             type='email'
             id='email'
@@ -143,12 +139,9 @@ export const RegisterCompany = () => {
             onChange={handleChange}
             required
             className='w-full border border-gray-300 rounded-md py-2 px-4'
-            placeholder='example@gmail.com'
           />
-        </div>
 
-        <div>
-          <label htmlFor='password'>Password *</label>
+          <label className='text-white' htmlFor='password'>Password *</label>
           <input
             type='password'
             id='password'
@@ -157,11 +150,9 @@ export const RegisterCompany = () => {
             onChange={handleChange}
             required
             className='w-full border border-gray-300 rounded-md py-2 px-4'
-            placeholder='********'
           />
-        </div>
-        <div>
-          <label htmlFor='confirmPassword'>Confirmación *</label>
+
+          <label className='text-white' htmlFor='confirmPassword'>Confirmación *</label>
           <input
             type='password'
             id='confirmPassword'
@@ -170,12 +161,9 @@ export const RegisterCompany = () => {
             onChange={handleChange}
             required
             className='w-full border border-gray-300 rounded-md py-2 px-4'
-            placeholder='********'
           />
-        </div>
 
-        <div>
-          <label htmlFor='description'>Descripción *</label>
+          <label className='text-white' htmlFor='description'>Descripción *</label>
           <textarea
             id='description'
             name='description'
@@ -183,15 +171,13 @@ export const RegisterCompany = () => {
             onChange={handleChange}
             required
             className='w-full border border-gray-300 rounded-md py-2 px-4'
-            placeholder='Descripcion'
           />
-        </div>
 
-{/* Utilizando el componente para subir imagenes a Firebase */}
-        <div>
-          <label htmlFor='logo'>Logo de la empresa</label>
+{}
+       
+          <label className='text-white' htmlFor='logo'>Logo de la empresa</label>
           <ImgUploader onChange={handleChange} />
-        </div>
+        
       </div>
 
       <form onSubmit={handleSubmit}>

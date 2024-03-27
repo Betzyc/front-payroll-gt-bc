@@ -1,4 +1,5 @@
 import { Navigation } from '../../components/Navigation'
+import { Link } from "react-router-dom"
 import React from "react";
 
 export const Home = () => (
@@ -32,7 +33,7 @@ export const Home = () => (
         
         <div className="flex justify-center space-x-4">
           <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md">
-            Prueba Gratis
+          <Link to='/register-company' className="text-white  hover:text-gray-600">Prueba Gratis</Link>
           </button>
           <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 px-6 py-3 rounded-md">
             Conocenos
