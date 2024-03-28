@@ -9,9 +9,9 @@ const config = {
   },
   production: {
     // production environment
-    API_URL: 'https://github.com/Betzyc/backend-payroll-gt.git', 
+    API_URL: ' https://api-payroll-gt-ezea.onrender.com', 
   },
 }
 
-const nodeEnv = import.meta.env.VITE_NODE_ENV || 'local'
+const nodeEnv = import.meta.env.VITE_NODE_ENV || 'production'
 export default config[nodeEnv]
